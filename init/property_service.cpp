@@ -73,7 +73,6 @@
 #include "subcontext.h"
 #include "system/core/init/property_service.pb.h"
 #include "util.h"
-#include "vendor_init.h"
 
 using namespace std::literals;
 
@@ -1299,10 +1298,6 @@ static void HandleInitSocket() {
             }
             InitPropertySet("ro.persistent_properties.ready", "true");
             persistent_properties_loaded = true;
-
-            /* vendor-specific properties
-            */
-            vendor_load_properties();
             break;
         }
         default:
